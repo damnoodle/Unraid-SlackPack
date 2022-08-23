@@ -1,12 +1,12 @@
 <?php
-$plg_path = '/boot/config/plugins/NerdPack/'; // plugin path
+$plg_path = '/boot/config/plugins/SlackPack/'; // plugin path
 $os_version = strtok(parse_ini_file('/etc/unraid-version')['version'], '.') . '.' . strtok('.');
 $pkg_path = $plg_path."packages/$os_version/"; // package path
 if (!is_dir($pkg_path))
     mkdir($pkg_path);
 
-$pkg_desc = 'https://raw.githubusercontent.com/dmacias72/unRAID-NerdPack/master/packages/packages-desc';
-$pkg_repo = "https://api.github.com/repos/dmacias72/unRAID-NerdPack/contents/packages/$os_version";
+$pkg_desc = 'https://raw.githubusercontent.com/damnoodle/Unraid-SlackPack/master/packages/packages-desc';
+$pkg_repo = "https://api.github.com/repos/damnoodle/Unraid-SlackPack/contents/packages/$os_version";
 
 $desc_file   = $pkg_path.'packages-desc';
 $repo_file   = $pkg_path.'packages.json';
@@ -26,7 +26,7 @@ $pkgs_desc_array   = file_exists($desc_file) ? json_decode(file_get_contents($de
 $pkgs_github_array = file_exists($repo_file) ? json_decode(file_get_contents($repo_file), true) : [];
 
 function logger($output, $quiet = false) {
-    exec('echo '.escapeshellarg($output).' 2>&1 | logger -tnerdpack');
+    exec('echo '.escapeshellarg($output).' 2>&1 | logger -tslackpack');
     if (!$quiet) {
         echo "\n".$output." \n";
         usleep(100000);
