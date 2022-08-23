@@ -25,10 +25,10 @@ $(function(){
             labels_placement: 'right',
             on_label: 'unInstall',
             off_label: 'unInstall',
-            checked: $.cookie('nerdpack_packages_uninstall') == '--uninstall'
+            checked: $.cookie('slackpack_packages_uninstall') == '--uninstall'
         })
         .change(function () {
-            $.cookie('nerdpack_packages_uninstall', $('.uninstallpkg')[0].checked ? '--uninstall' : '', { expires: 3650 });
+            $.cookie('slackpack_packages_uninstall', $('.uninstallpkg')[0].checked ? '--uninstall' : '', { expires: 3650 });
         });
 
     // select all packages switch
@@ -37,11 +37,11 @@ $(function(){
             labels_placement: 'right',
             on_label: 'Select All',
             off_label: 'Select All',
-            checked: $.cookie('nerdpack_checkall') == 'yes'
+            checked: $.cookie('slackpack_checkall') == 'yes'
         })
         .change(function () {
             var myval = $(this)[0].checked;
-            $.cookie('nerdpack_checkall', myval ? 'yes' : 'no', { expires: 3650 });
+            $.cookie('slackpack_checkall', myval ? 'yes' : 'no', { expires: 3650 });
             $('#tblPackages tbody td:visible .pkgcheckbox').switchButton({checked: myval});
         });
 
@@ -126,7 +126,7 @@ function packageQuery(force) {
         if (data.empty == true && Count > 0) {
             swal({
                 title:'Downloaded Packages Missing!',
-                text:'You either changed unRAID versions or deleted your downloaded packages. Click Download or the Apply button below to download and install your selected packages.',
+                text:'You either changed Unraid versions or deleted your downloaded packages. Click Download or the Apply button below to download and install your selected packages.',
                 type:'warning',
                 showCancelButton: true,
                 confirmButtonColor: "#00AA00",
@@ -148,7 +148,7 @@ function packageQuery(force) {
 
 function Apply() {
         checkDepends();
-        var Arg2 = (typeof $.cookie('nerdpack_packages_uninstall') === 'undefined') ? '' : '&arg2='+$.cookie('nerdpack_packages_uninstall');
+        var Arg2 = (typeof $.cookie('slackpack_packages_uninstall') === 'undefined') ? '' : '&arg2='+$.cookie('slackpack_packages_uninstall');
         $.post('/update.php', $('#package_form').serializeArray(), function() {
                 openBox('/plugins/NerdPack/scripts/packagemanager&arg1=--download'+ Arg2,
                             'Package Manager', 600, 900, true);
