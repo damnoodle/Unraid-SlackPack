@@ -3,10 +3,10 @@ Menu="UserPreferences"
 Title="Slack Pack"
 Tag="dropbox"
 ---
-<link type="text/css" rel="stylesheet" href="<?=autov('/plugins/NerdPack/css/tablesorter.css');?>">
-<link type="text/css" rel="stylesheet" href="<?=autov('/plugins/NerdPack/css/tablesorter-'.(($display['theme'] == 'white' || $display['theme'] == 'azure') ? 'white' : 'black').'.css');?>">
+<link type="text/css" rel="stylesheet" href="<?=autov('/plugins/SlackPack/css/tablesorter.css');?>">
+<link type="text/css" rel="stylesheet" href="<?=autov('/plugins/SlackPack/css/tablesorter-'.(($display['theme'] == 'white' || $display['theme'] == 'azure') ? 'white' : 'black').'.css');?>">
 <link type="text/css" rel="stylesheet" href="<?=autov('/webGui/styles/jquery.switchbutton.css');?>">
-<link type="text/css" rel="stylesheet" href="<?=autov('/plugins/NerdPack/css/SlackPack.css');?>">
+<link type="text/css" rel="stylesheet" href="<?=autov('/plugins/SlackPack/css/SlackPack.css');?>">
 <style>
 table.tablesorter tbody tr:nth-child(odd) {
     background-color: #<?=($display['theme'] == 'white' || $display['theme'] == 'azure') ? 'F0F0F0' : '212421';?>;
@@ -17,7 +17,7 @@ table.tablesorter tbody tr:nth-child(even) {
 </style>
 
 <form markdown="1" id="package_form" name="package_settings" method="POST" action="/update.php" target="progressFrame">
-<input type="hidden" id="include" name="#include" value="/plugins/NerdPack/include/ClearConfig.php"/>
+<input type="hidden" id="include" name="#include" value="/plugins/SlackPack/include/ClearConfig.php"/>
 
 <div class="wrapper">
 <table class="tablesorter hover-highlight" id="tblPackages">
@@ -38,10 +38,10 @@ table.tablesorter tbody tr:nth-child(even) {
 </div>
 <input onclick="packageQuery(1)" value="Check for Updates" type="button"><input class="reset" type="button" title="reset filters" value="Reset Filters">
 : <input id="btnApply" type="button" value="Apply"><input type="button" value="Done" onClick="done()">
-<input type="hidden" name="#file" value="NerdPack/NerdPack.cfg">
+<input type="hidden" name="#file" value="SlackPack/SlackPack.cfg">
 </form>
 
-<script src="<?=autov('/plugins/NerdPack/js/jquery.tablesorter.combined.min.js');?>"></script>
-<script src="<?=autov('/plugins/NerdPack/js/parser-metric.min.js');?>"></script>
+<script src="<?=autov('/plugins/SlackPack/js/jquery.tablesorter.combined.min.js');?>"></script>
+<script src="<?=autov('/plugins/SlackPack/js/parser-metric.min.js');?>"></script>
 <script type="text/javascript" src="<?=autov('/webGui/javascript/jquery.switchbutton.js');?>"></script>
-<script type="text/javascript" src="<?=autov('/plugins/NerdPack/js/jquery.NerdPack.js');?>"></script>
+<script type="text/javascript" src="<?=autov('/plugins/SlackPack/js/jquery.SlackPack.js');?>"></script>
