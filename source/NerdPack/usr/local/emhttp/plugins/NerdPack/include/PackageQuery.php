@@ -1,5 +1,5 @@
 <?
-require_once '/usr/local/emhttp/plugins/NerdPack/include/NerdPackHelpers.php';
+require_once '/usr/local/emhttp/plugins/NerdPack/include/SlackPackHelpers.php';
 require_once '/usr/local/emhttp/plugins/NerdPack/include/DownloadHelpers.php';
 
 // Only download repo update if the current one is 1 hour old or more
