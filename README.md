@@ -1,11 +1,16 @@
-# unRAID 6.1+
-unRAID NerdPack plugin and packages
+# Unraid 6.11+
+Unraid SlackPack plugin and packages
 
-Collection of packages for unRAID.
+Collection of packages for Unraid.
 
 
+This was repo was forked from dmacias72
 
-These are notes more for my memory or for anyone who wants to make unRAID plugins using this structure
+I have modified it for my personal use
+
+###### ------ Everything below this line is dmacias72 comments ------  ######
+
+These are notes more for my memory or for anyone who wants to make Unraid plugins using this structure
 
 I manage this on my laptop running Linux Mint Mate
 
