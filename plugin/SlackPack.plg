@@ -234,7 +234,7 @@ if [ "${sum1:0:32}" != "${sum2:0:32}" ]; then
         &plgPATH;/&plgNAME;.md5
     exit 1
 else
-    count=`ls -1 /boot/config/plugins/NerdPack/packages/*.txz 2>/dev/null | wc -l`
+    count=`ls -1 /boot/config/plugins/SlackPack/packages/*.txz 2>/dev/null | wc -l`
     if [ $count != 0 ]; then
         if [ ! -d &plgPATH;/packages/6.1 ]; then
             mkdir -p &plgPATH;/packages/6.1
@@ -250,7 +250,7 @@ else
         #check for previous version
         OLD=$(echo | awk "{print ${VER} - 0.1}")
         if [ -d &plgPATH;/packages/${OLD} ]; then
-            count2=`ls -1 /boot/config/plugins/NerdPack/packages/${OLD}/*.txz 2>/dev/null | wc -l`
+            count2=`ls -1 /boot/config/plugins/SlackPack/packages/${OLD}/*.txz 2>/dev/null | wc -l`
             if [ $count2 != 0 ]; then
                 echo "Copying package files..."
                 cp &plgPATH;/packages/${OLD}/* &plgPATH;/packages/${VER}/
@@ -259,7 +259,7 @@ else
             #check for two versions ago
             OLD2=$(echo | awk "{print ${VER} - 0.2}")
             if [ -d &plgPATH;/packages/${OLD2} ]; then
-                count3=`ls -1 /boot/config/plugins/NerdPack/packages/${OLD2}/*.txz 2>/dev/null | wc -l`
+                count3=`ls -1 /boot/config/plugins/SlackPack/packages/${OLD2}/*.txz 2>/dev/null | wc -l`
                 if [ $count3 != 0 ]; then
                     echo "Copying package files..."
                     cp &plgPATH;/packages/${OLD2}/* &plgPATH;/packages/${VER}/

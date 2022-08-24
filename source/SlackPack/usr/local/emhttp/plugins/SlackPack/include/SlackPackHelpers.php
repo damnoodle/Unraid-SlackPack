@@ -10,7 +10,7 @@ $pkg_repo = "https://api.github.com/repos/damnoodle/Unraid-SlackPack/contents/pa
 
 $desc_file   = $pkg_path.'packages-desc';
 $repo_file   = $pkg_path.'packages.json';
-$config_file = $plg_path.'NerdPack.cfg';
+$config_file = $plg_path.'SlackPack.cfg';
 
 // get package configs
 $pkg_cfg = file_exists($config_file) ? parse_ini_file($config_file) : [];

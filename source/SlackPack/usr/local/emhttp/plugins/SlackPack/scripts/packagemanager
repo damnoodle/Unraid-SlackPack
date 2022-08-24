@@ -48,8 +48,8 @@ $argu = (array_key_exists("u", $args) || array_key_exists("uninstall", $args));
 $argv = (array_key_exists("v", $args) || array_key_exists("verbose", $args));
 $debug = array_key_exists("debug", $args);
 
-require_once '/usr/local/emhttp/plugins/NerdPack/include/SlackPackHelpers.php';
-require_once '/usr/local/emhttp/plugins/NerdPack/include/DownloadHelpers.php';
+require_once '/usr/local/emhttp/plugins/SlackPack/include/SlackPackHelpers.php';
+require_once '/usr/local/emhttp/plugins/SlackPack/include/DownloadHelpers.php';
 
 /* debug */
 function debug($m){
